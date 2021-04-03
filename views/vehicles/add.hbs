@@ -1,0 +1,27 @@
+<h3>Add Vehicle</h3>
+<div class="row">
+    <form action="/vehicles" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field">
+                <input type="number" min="1900" max="2099" id="year" name="year">
+                <label for="year">Year</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="make" name="make">
+                <label for="make">Make</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="model" name="model">
+                <label for="model">Model</label>
+            </div>
+        </div>
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>

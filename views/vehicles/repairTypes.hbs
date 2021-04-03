@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col s12 m8">
+        <h3>{{vehicle.year}} {{vehicle.make}} {{vehicle.model}}
+            <small>{{{editIcon vehicle.user user vehicle._id false}}}</small>
+        </h3>
+        <div class="card vehicle">
+            <div class="card-content">
+                <span class="card-title">What do you want to repair?</span>
+            </div>
+        </div>
+        <div class="card brakes">
+            <div class="card-content">
+                <span class="card-title">
+                    <a href="/repairVideos/{{vehicle._id}}?repair=brakes">Brakes</a>
+                </span>
+            </div>
+        </div>
+        <div class="card tune-up">
+            <div class="card-content">
+                <span class="card-title">
+                    <a href="/repairVideos/{{vehicle._id}}?repair=tune up">Tune Up</a>
+                </span>
+            </div>
+        </div>
+        <div class="card oil-change">
+            <div class="card-content">
+                <span class="card-title">
+                    <a href="/repairVideos/{{vehicle._id}}?repair=oil change">Oil Change</a>
+                </span>
+            </div>
+        </div>
+        <div class="card other">
+            <div class="card-content">
+                <span class="card-title">Other</span>
+                <form action="/repairVideos/{{vehicle._id}}" method="GET">
+                    <div class="input-field">
+                        <input type="text" id="repair" name="repair">
+                        <input type="submit" value="Search" class="btn">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m4">
+        <div class="card center-align">
+            <div class="card-content">
+                <span class="card-title">{{vehicle.user.displayName}}</span>
+                <img src="{{vehicle.user.image}}" class="circle responsive-img img-small">
+            </div>
+            <div class="card-action">
+                <a href="/dashboard">More From {{vehicle.user.firstName}}</a>
+            </div>
+        </div>
+    </div>
+</div>

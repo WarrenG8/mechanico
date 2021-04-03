@@ -1,0 +1,29 @@
+<h3>Edit Vehicle</h3>
+<div class="row">
+    <form action="/vehicles/{{vehicle._id}}" method="POST" class="col s12">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="year" name="year" value="{{vehicle.year}}">
+                <label for="year">Year</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="make" name="make" value="{{vehicle.make}}">
+                <label for="make">Make</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="text" id="model" name="model" value="{{vehicle.model}}">
+                <label for="model">Model</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="Save" class="btn">
+            <a href="/dashboard" class="btn orange">Cancel</a>
+        </div>
+    </form>
+</div>

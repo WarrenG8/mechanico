@@ -1,0 +1,21 @@
+<h1>Videos</h1>
+<div class="row">
+    {{#each youTubeLinks}}
+    <div class="col s12 m12">
+        <div class="card">
+            <div class="card-content center-align">
+                <h5>{{snippet.title}}</h5>
+                <br>
+                <a href="/repairVideos/watchVideo/{{id.videoId}}/{{snippet.title}}">
+                    <img src="{{snippet.thumbnails.medium.url}}" alt="video">
+                </a>
+            </div>
+            <div class="card-action center-align">
+                <a href="/repairVideos/watchVideo/{{id.videoId}}/{{snippet.title}}" class="btn grey">Play Video</a>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <p>No stories to display</p>
+    {{/each}}
+</div>
