@@ -4,9 +4,11 @@ on:
   push:
     branches:
     - master
+    tags:
+      - v\d+\.\d+\.\d+
 
 env:
-  PROJECT_ID: ${{ secrets.GCE_PROJECT }}
+  PROJECT_ID: devops-tutorial-309521
 
 jobs:
   setup-build-publish-deploy:
@@ -14,6 +16,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Set ENV
+      run: |-
+        if [ ${GITHUB_REF##*/} = "master" ]; then
+          echo "ENV=staging" >> $GITHUB_ENV
+        else 
+          echo "ENV=prod" >> $GITHUB_ENV
+        fi
+
     - name: Checkout
       uses: actions/checkout@v2
 
